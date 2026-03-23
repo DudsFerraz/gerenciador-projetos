@@ -2,4 +2,4 @@
 
 ## Documentacao
 
-- Escopo do sistema e roadmap: [docs/escopo-sistema-e-roadmap.md](docs/MVP_and_roadmap.md)
+- MVP e roadmap: [docs/MVP_and_roadmap.md](docs/MVP_and_roadmap.md)
