@@ -1,57 +1,14 @@
 ***
-# Escopo do Sistema e Funcionalidades
 
-Este documento detalha as funcionalidades do sistema de gestão de projetos, dividido entre o Produto Mínimo Viável (MVP) — essencial para o lançamento — e o roadmap de melhorias contínuas (Features Futuras).
+# 1. Features Futuras (Roadmap)
 
-## 1. MVP (Minimum Viable Product)
+## Funcionalidades planejadas para expandir a usabilidade, governança e integração da plataforma após a consolidação do MVP.
 
-O núcleo do sistema focado em resolver a organização básica de projetos, tarefas e o acompanhamento de reuniões.
----
-
-### 1.1. Gestão de Projetos (Projects)
-
-> O sistema permite a criação e centralização de projetos, vinculando-os aos usuários responsáveis da equipe. Cada projeto possui um status de acompanhamento ('DEVELOPMENT', 'PRODUCTION', 'MIGRATED'...) para facilitar a identificação de sua etapa atual no ciclo de vida do desenvolvimento.
-
-* **Implementação:** Tabela `projects` com CRUD padrão no Laravel e tabela pivô `project_user`.
-* **Prós:** Simplicidade inicial; resolve o problema imediato de organização.
-* **Contras:** Sem a tabela `documents` no MVP, o contexto detalhado do projeto precisará ficar temporariamente na descrição básica.
----
-
-### 1.2. Gestão de Tarefas (Tasks)
-
-> Fornece um sistema de cards para mapear e acompanhar o trabalho. Cada tarefa conta com definição de prioridade, status ('TO_DO', 'IN_PROGRESS', 'IN_REVIEW'...), datas de início e entrega, além de labels ('FEATURE','FIX','DOC'...).
-
-* **Implementação:** Tabela `tasks` vinculadas aos projetos, com tabela pivô `task_user` para atribuição de múltiplos responsáveis.
-* **Prós:** Permite acompanhamento granular do progresso da equipe.
-* **Contras:** Sem aninhamento (subtasks) no MVP.
----
-
-### 1.3. Reuniões e Atualizações de Status (Meetings & Status Updates)
-
-> Gerentes de projeto podem submeter atualizações de status referentes aos seus projetos diretamente para a pauta de uma reunião programada, consolidando o histórico de evolução e as decisões em um único local.
-
-* **Implementação:** Tabelas `meetings` e `status_updates`. O Laravel fará o relacionamento para agrupar as atualizações por reunião.
-* **Prós:** Regsitra o histórico de evolução dos projetos ao longo do tempo.
-* **Contras:** Depende da adesão dos usuários; se os gerentes não submeterem `status_updates`, a reunião fica vazia no sistema.
----
-
-### 1.4. Autenticação e Usuários (Users)
-
-> Controle de acesso seguro e unificado, permitindo que os usuários acessem a plataforma utilizando as credenciais da rede da instituição. Elimina a necessidade de criação de novos cadastros manuais ou gerenciamento de múltiplas senhas pelos colaboradores.
-
-* **Implementação:** Utilização do pacote `senha-unica-socialite`.
-* **Prós:** O usuário não precisa decorar uma nova senha; a gestão de identidades é 'terceirizada' e segura.
----
-
-## 2. Features Futuras (Roadmap)
-
-Funcionalidades planejadas para expandir a usabilidade, governança e integração da plataforma após a consolidação do MVP.
-
->A  lista abaixo é ordenada por prioridade, ou seja, os últimos itens são considerados de baixo impacto e relevância.
+> Este documento detalha as funcionalidades do sistema de gestão de projetos, especificamente o roadmap de melhorias contínuas (Features Futuras). A  lista  é ordenada por prioridade, ou seja, os últimos itens são considerados de baixo impacto e relevância.
 
 ---
 
-### 2.1. Documentação Interna Nativa (Docs)
+## 1. Documentação Interna Nativa (Docs)
 
 > **Problema:** Sem uma estrutura dedicada, o contexto e os requisitos de um projeto ficam restritos a um texto simples (descrição), limitando a formatação e fragmentando a informação em serviços externos (como Google Docs).
 >
@@ -63,7 +20,7 @@ Funcionalidades planejadas para expandir a usabilidade, governança e integraç�
 
 ---
 
-### 2.2. Mídias em Tarefas (Fotos e Vídeos)
+## 2. Mídias em Tarefas (Fotos e Vídeos)
 
 > **Problema:** Bugs visuais ou fluxos complexos são difíceis de explicar apenas com texto.
 >
@@ -75,7 +32,7 @@ Funcionalidades planejadas para expandir a usabilidade, governança e integraç�
 
 ---
 
-### 2.3. Dashboards Analíticos e Calendário do Projeto
+## 3. Dashboards Analíticos e Calendário do Projeto
 
 > **Problema:** À medida que o volume de trabalho cresce, acompanhar a saúde geral do projeto analisando apenas listas de tarefas torna-se inviável. Fica difícil visualizar os marcos temporais e a distribuição do esforço da equipe sem uma visão macro consolidada.
 >
@@ -89,7 +46,7 @@ Funcionalidades planejadas para expandir a usabilidade, governança e integraç�
 
 ---
 
-### 2.4. Dashboard e Calendário Pessoal do Usuário
+## 4. Dashboard e Calendário Pessoal do Usuário
 
 > **Problema:** Usuários perdem tempo navegando pelas *views* de múltiplos projetos para descobrir quais são suas pendências do dia.
 >
@@ -101,7 +58,7 @@ Funcionalidades planejadas para expandir a usabilidade, governança e integraç�
 
 ---
 
-### 2.5. Integração Bidirecional com GitHub
+## 5. Integração Bidirecional com GitHub
 
 > **Problema:** Desenvolvedores duplicam trabalho atualizando o GitHub (Issues/PRs) e o sistema interno de tarefas.
 >
@@ -113,7 +70,7 @@ Funcionalidades planejadas para expandir a usabilidade, governança e integraç�
 
 ---
 
-### 2.6. Organização Estrutural (Pastas, Listas e Subtasks)
+## 6. Organização Estrutural (Pastas, Listas e Subtasks)
 
 > **Problema:** À medida que a ferramenta cresce, um projeto contendo centenas de tarefas se torna inavegável.
 >
@@ -125,7 +82,7 @@ Funcionalidades planejadas para expandir a usabilidade, governança e integraç�
 
 ---
 
-### 2.7. Múltiplas Visões (View de Dev vs. View Administrativa)
+## 7. Múltiplas Visões (View de Dev vs. View Administrativa)
 
 > **Problema:** Softwares como Jira são robustos, mas intimidam usuários não-técnicos. Equanto isso, softwares simplistas não atendem às métricas necessárias para desenvolvedores.
 >
@@ -136,7 +93,7 @@ Funcionalidades planejadas para expandir a usabilidade, governança e integraç�
 
 ---
 
-### 2.8. Trilha de Auditoria Avançada (Logs)
+## 8. Trilha de Auditoria Avançada (Logs)
 
 > **Problema:** O MVP possui apenas o último usuário que modificou um registro, causando "amnésia de estado" sobre o histórico do projeto.
 >
@@ -148,7 +105,7 @@ Funcionalidades planejadas para expandir a usabilidade, governança e integraç�
 
 ---
 
-### 2.9. Central de Comunicação (Inbox, Menções e E-mails)
+## 9. Central de Comunicação (Inbox, Menções e E-mails)
 
 > **Problema:** A comunicação fica dispersa e os usuários não sabem quando são demandados.
 >
@@ -160,7 +117,7 @@ Funcionalidades planejadas para expandir a usabilidade, governança e integraç�
 
 ---
 
-### 2.10. Busca Global e Filtros Avançados
+## 10. Busca Global e Filtros Avançados
 
 > **Problema:** Encontrar tarefas ou documentos específicos se torna exaustivo quando o sistema escala e o número de cards aumenta.
 >
@@ -172,7 +129,7 @@ Funcionalidades planejadas para expandir a usabilidade, governança e integraç�
 
 ---
 
-### 2.11. Navegação por Atalhos de Teclado
+## 11. Navegação por Atalhos de Teclado
 
 > **Problema:** A dependência exclusiva do uso do mouse quebra o estado de *flow* (fluxo) e desacelera o trabalho, principalmente para desenvolvedores.
 >

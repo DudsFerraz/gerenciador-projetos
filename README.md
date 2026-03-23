@@ -1,5 +1,6 @@
 # Sistema interno USP para gerenciamento de projetos
 
-## Documentacao
+## Documentacção
 
-- MVP e roadmap: [docs/MVP_and_roadmap.md](docs/MVP_and_roadmap.md)
+- MVP: [docs/MVP.md](docs/MVP.md)
+- Road Map: [docs/roadmap.md](docs/roadmap.md)
