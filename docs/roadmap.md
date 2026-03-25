@@ -8,7 +8,31 @@
 
 ---
 
-## 1. Documentação Interna Nativa (Docs)
+## 1. Reuniões (Meetings)
+
+> **Problema:** Sem um módulo dedicado de reuniões, decisões e alinhamentos importantes ficam dispersos em conversas informais, dificultando rastreabilidade e governança.
+>
+> **Solução:** Implementar uma entidade de reuniões para agendar e registrar checkpoints de projeto, centralizando contexto e histórico em um único local.
+
+* **Implementação:** Tabela `meetings` com CRUD no Laravel, vinculada aos projetos e preparada para consolidar pautas e registros associados.
+* **Prós:** Melhora a governança e cria trilha histórica de decisões por projeto.
+* **Contras:** Sem disciplina de uso, pode virar apenas um cadastro de eventos sem valor analítico.
+
+---
+
+## 2. Atualizações de Status (Status Updates)
+
+> **Problema:** Sem atualizações estruturadas, o acompanhamento do progresso depende de relatos ad-hoc e perde previsibilidade.
+>
+> **Solução:** Criar um fluxo de atualizações periódicas para registrar evolução, impedimentos e próximos passos por projeto e por reunião.
+
+* **Implementação:** Tabela `status_updates` relacionada a `projects` e `meetings`, permitindo agrupamento e leitura histórica no Laravel.
+* **Prós:** Gera visibilidade contínua da evolução e melhora a qualidade do acompanhamento.
+* **Contras:** Depende da adesão dos gerentes e responsáveis para manter os registros recorrentes.
+
+---
+
+## 3. Documentação Interna Nativa (Docs)
 
 > **Problema:** Sem uma estrutura dedicada, o contexto e os requisitos de um projeto ficam restritos a um texto simples (descrição), limitando a formatação e fragmentando a informação em serviços externos (como Google Docs).
 >
@@ -20,7 +44,7 @@
 
 ---
 
-## 2. Mídias em Tarefas (Fotos e Vídeos)
+## 4. Mídias em Tarefas (Fotos e Vídeos)
 
 > **Problema:** Bugs visuais ou fluxos complexos são difíceis de explicar apenas com texto.
 >
@@ -32,7 +56,7 @@
 
 ---
 
-## 3. Dashboards Analíticos e Calendário do Projeto
+## 5. Dashboards Analíticos e Calendário do Projeto
 
 > **Problema:** À medida que o volume de trabalho cresce, acompanhar a saúde geral do projeto analisando apenas listas de tarefas torna-se inviável. Fica difícil visualizar os marcos temporais e a distribuição do esforço da equipe sem uma visão macro consolidada.
 >
@@ -46,7 +70,7 @@
 
 ---
 
-## 4. Dashboard e Calendário Pessoal do Usuário
+## 6. Dashboard e Calendário Pessoal do Usuário
 
 > **Problema:** Usuários perdem tempo navegando pelas *views* de múltiplos projetos para descobrir quais são suas pendências do dia.
 >
@@ -58,7 +82,7 @@
 
 ---
 
-## 5. Integração Bidirecional com GitHub
+## 7. Integração Bidirecional com GitHub
 
 > **Problema:** Desenvolvedores duplicam trabalho atualizando o GitHub (Issues/PRs) e o sistema interno de tarefas.
 >
@@ -70,7 +94,7 @@
 
 ---
 
-## 6. Organização Estrutural (Pastas, Listas e Subtasks)
+## 8. Organização Estrutural (Pastas, Listas e Subtasks)
 
 > **Problema:** À medida que a ferramenta cresce, um projeto contendo centenas de tarefas se torna inavegável.
 >
@@ -82,7 +106,7 @@
 
 ---
 
-## 7. Múltiplas Visões (View de Dev vs. View Administrativa)
+## 9. Múltiplas Visões (View de Dev vs. View Administrativa)
 
 > **Problema:** Softwares como Jira são robustos, mas intimidam usuários não-técnicos. Equanto isso, softwares simplistas não atendem às métricas necessárias para desenvolvedores.
 >
@@ -93,7 +117,7 @@
 
 ---
 
-## 8. Trilha de Auditoria Avançada (Logs)
+## 10. Trilha de Auditoria Avançada (Logs)
 
 > **Problema:** O MVP possui apenas o último usuário que modificou um registro, causando "amnésia de estado" sobre o histórico do projeto.
 >
@@ -105,7 +129,7 @@
 
 ---
 
-## 9. Central de Comunicação (Inbox, Menções e E-mails)
+## 11. Central de Comunicação (Inbox, Menções e E-mails)
 
 > **Problema:** A comunicação fica dispersa e os usuários não sabem quando são demandados.
 >
@@ -117,7 +141,7 @@
 
 ---
 
-## 10. Busca Global e Filtros Avançados
+## 12. Busca Global e Filtros Avançados
 
 > **Problema:** Encontrar tarefas ou documentos específicos se torna exaustivo quando o sistema escala e o número de cards aumenta.
 >
@@ -129,7 +153,7 @@
 
 ---
 
-## 11. Navegação por Atalhos de Teclado
+## 13. Navegação por Atalhos de Teclado
 
 > **Problema:** A dependência exclusiva do uso do mouse quebra o estado de *flow* (fluxo) e desacelera o trabalho, principalmente para desenvolvedores.
 >

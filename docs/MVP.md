@@ -23,16 +23,7 @@
 * **Contras:** Sem aninhamento (subtasks) no MVP.
 ---
 
-## 3. Reuniões e Atualizações de Status (Meetings & Status Updates)
-
-> Gerentes de projeto podem submeter atualizações de status referentes aos seus projetos diretamente para a pauta de uma reunião programada, consolidando o histórico de evolução e as decisões em um único local.
-
-* **Implementação:** Tabelas `meetings` e `status_updates`. O Laravel fará o relacionamento para agrupar as atualizações por reunião.
-* **Prós:** Regsitra o histórico de evolução dos projetos ao longo do tempo.
-* **Contras:** Depende da adesão dos usuários; se os gerentes não submeterem `status_updates`, a reunião fica vazia no sistema.
----
-
-## 4. Autenticação e Usuários (Users)
+## 3. Autenticação e Usuários (Users)
 
 > Controle de acesso seguro e unificado, permitindo que os usuários acessem a plataforma utilizando as credenciais da rede da instituição. Elimina a necessidade de criação de novos cadastros manuais ou gerenciamento de múltiplas senhas pelos colaboradores.
 
